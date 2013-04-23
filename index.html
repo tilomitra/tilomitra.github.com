@@ -2,14 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>YUI CSS Extras</title>
+    <title>YUI CSS</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-<link rel="stylesheet" type="text/css" href="http://necolas.github.com/normalize.css/1.0.2/normalize.css">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.9.0pr1/build/cssgrids-responsive/cssgrids-responsive-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?3.10.0/build/cssnormalize/cssnormalize-min.css&amp;3.10.0/build/cssgrids-responsive/cssgrids-responsive-min.css&amp;3.10.0/build/cssbutton/cssbutton-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csslist/gallerycss-csslist-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csstable/gallerycss-csstable-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css">
 
-<link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csslist/master/css/list-core.css">
-<link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csslist/master/css/list.css">
-<link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csslist/master/css/list-responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css"> <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography.css"> <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/ccampbell/rainbow/master/themes/github.css">
+
+
 
 <!-- TYPEKIT -->
 <script type="text/javascript" src="//use.typekit.net/ajf8ggy.js"></script>
@@ -21,8 +22,17 @@
         }
 
         .hero-unit {
-            margin: 8em 0 6em;
+            padding: 8em 0 6em;
+            background: rgb(39, 39, 39);
 
+        }
+
+        h1 {
+            font-size:800%;
+            margin: 0;
+            padding:0;
+            color: white;
+            font-weight:100;
         }
 
         h2 {
@@ -31,18 +41,29 @@
             margin: 0.02em 0;
             color: #888;
         }
-        h1 {
-            font-size:800%;
-            margin: 0;
-            padding:0;
-            font-weight:100;
+
+        h3 {
+            font-weight: normal;
+            text-transform: uppercase;
+            padding: 1em 0;
+            margin: 0 0 1em;
+        }
+
+        .core {
+            color: rgb(68, 170, 250);
+            background: rgb(56, 90, 163);
+        }
+
+        .addons {
+            color: rgb(178, 236, 190);
+            background: rgb(50, 155, 36);
         }
 
         .yui3-menu li a {
             cursor: pointer;
             font-weight:300;
             font-size:150%;
-            color: #666;
+            color: rgb(60, 64, 66);
             transition: color 0.5s;
             -moz-transition: color 0.5s; /* Firefox 4 */
             -webkit-transition: color 0.5s; /* Safari and Chrome */
@@ -50,7 +71,7 @@
         }
         .home .yui3-menu li a:hover {
             background: white;
-            color: #000;
+            color: rgb(48, 174, 245);
             text-shadow:none;
             border:none;
         }
@@ -63,31 +84,58 @@
             h2 {
                 font-size: 165%;
             }
-
-            .hero-unit {
-                margin: 2em 0 3em;
-            }
         }
 
 
     </style>
 </head>
 
-<body class='yui3-g-r home'>
+<body class='yui3-g-r home csstype'>
 
     <div class="hero-unit">
         <h1 class="yui3-u-1">YUI CSS</h1>
         <h2 class='yui3-u-1'>Simple CSS for the web.</h2>
     </div>
 
+    <h3 class="yui3-u-1 core">The Core</h3>
     <div class="yui3-u yui3-menu yui3-menu-open yui3-menu-horizontal">
         <ul class="tk-proxima-nova">
-            <li><a href="http://yui.github.com/gridbuilder/docs.html">Grids</a></li>
-            <li><a href="http://tilomitra.github.com/cssforms/">Forms</a></li>
-            <li><a href="http://tilomitra.github.com/csstables/">Tables</a></li>
-            <li><a href="http://tilomitra.github.com/csslist/">Lists</a></li>
-            <li><a href="http://tilomitra.github.com/cssextras/">Extras</a></li>
+            <li><a href="http://yui.github.io/gridbuilder/docs.html">Grids</a></li>
+            <li><a href="http://tilomitra.github.io/cssforms/">Forms</a></li>
+            <li><a href="http://tilomitra.github.io/csstables/">Tables</a></li>
+            <li><a href="http://tilomitra.github.io/csslist/">Lists</a></li>
         </ul>
     </div>
+
+    <div class="yui3-u text-left">
+        <pre class="yui3-u-1"><code data-language="html">
+    <!-- Combo with CSSNormalize, CSSGrids-Responsive, CSSForm, CSSTable, CSSList (v3.10.0) -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?3.10.0/build/cssnormalize/cssnormalize-min.css&amp;3.10.0/build/cssgrids-responsive/cssgrids-responsive-min.css&amp;3.10.0/build/cssbutton/cssbutton-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csslist/gallerycss-csslist-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csstable/gallerycss-csstable-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css">
+        </code></pre>
+    </div>
+
+
+    <h3 class="yui3-u-1 addons">Add-ons</h3>
+    <div class="yui3-u yui3-menu yui3-menu-open yui3-menu-horizontal">
+        <ul class="tk-proxima-nova">
+            <li><a href="http://tilomitra.github.io/csstypography/">Typography</a></li>
+            <li><a href="http://tilomitra.github.io/cssextras/">Extras</a></li>
+        </ul>
+    </div>
+
+    <div class="yui3-u text-left">
+        <pre class="yui3-u-1"><code data-language="html">
+    <!-- TYPOGRAPHY http://tilomitra.github.io/csstypography/ -->
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-responsive.css">
+
+    <!-- EXTRAS http://tilomitra.github.io/cssextras/ -->
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/cssextras/master/css/cssextras.css">
+        </code></pre>
+    </div>
+
+    <script src="https://rawgithub.com/ccampbell/rainbow/master/js/rainbow.min.js"></script>
+    <script src="https://rawgithub.com/ccampbell/rainbow/master/js/language/generic.js"></script>
 </body>
 </html>
