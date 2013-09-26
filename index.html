@@ -2,140 +2,67 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>YUI CSS</title>
+    <title>Tilo on GitHub</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?3.10.0/build/cssnormalize/cssnormalize-min.css&amp;3.10.0/build/cssgrids-responsive/cssgrids-responsive-min.css&amp;3.10.0/build/cssbutton/cssbutton-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csslist/gallerycss-csslist-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csstable/gallerycss-csstable-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css"> <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography.css"> <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-responsive.css">
+    <!-- Combo with CSSNormalize, CSSGrids-Responsive, CSSForm, CSSTable, CSSList (v3.9.1) -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/ccampbell/rainbow/master/themes/github.css">
+    <!-- Some custom styles to make things pretty. -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
-
-
-<!-- TYPEKIT -->
-<script type="text/javascript" src="//use.typekit.net/ajf8ggy.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <style>
-
-        body {
-            text-align: center;
-        }
-
-        .hero-unit {
-            padding: 8em 0 6em;
-            background: rgb(39, 39, 39);
-
-        }
-
-        h1 {
-            font-size:800%;
-            margin: 0;
-            padding:0;
-            color: white;
-            font-weight:100;
-        }
-
-        h2 {
-            font-weight:100;
-            font-size:260%;
-            margin: 0.02em 0;
-            color: #888;
-        }
-
-        h3 {
-            font-weight: normal;
-            text-transform: uppercase;
-            padding: 1em 0;
-            margin: 0 0 1em;
-        }
-
-        .core {
-            color: rgb(68, 170, 250);
-            background: rgb(56, 90, 163);
-        }
-
-        .addons {
-            color: rgb(178, 236, 190);
-            background: rgb(50, 155, 36);
-        }
-
-        .yui3-menu li a {
-            cursor: pointer;
-            font-weight:300;
-            font-size:150%;
-            color: rgb(60, 64, 66);
-            transition: color 0.5s;
-            -moz-transition: color 0.5s; /* Firefox 4 */
-            -webkit-transition: color 0.5s; /* Safari and Chrome */
-            -o-transition: color 0.5s; /* Opera */
-        }
-        .home .yui3-menu li a:hover {
-            background: white;
-            color: rgb(48, 174, 245);
-            text-shadow:none;
-            border:none;
-        }
-
-
-        @media (max-width: 767px) {
-            h1 {
-                font-size:400%;
-            }
-            h2 {
-                font-size: 165%;
-            }
-        }
-
-
-    </style>
 </head>
 
-<body class='yui3-g-r home csstype'>
-
-    <div class="hero-unit">
-        <h1 class="yui3-u-1">YUI CSS</h1>
-        <h2 class='yui3-u-1'>Simple CSS for the web.</h2>
+<body>
+    <div class="header">
+        <h1>Tilo on GitHub</h1>
     </div>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div class="content">
+                <h2>Personal GitHub Projects</h2>
+                <ul class="projects">
+                    <li>
+                        <h3><a href="http://tilomitra.github.io/tipsy/">Y.Tipsy and Y.Popover</a></h3>
+                        <p>YUI widgets for easy tooltips and popovers.</p>
+                    </li>
+                    <li>
+                        <h3><a href="http://tilomitra.github.io/cssextras/">Pure Extras</a></h3>
+                        <p>Common user interface elements for web apps. Built on Pure.</p>
+                    </li>
+                    <li>
+                        <h3><a href="http://tilomitra.github.io/csstypography/">Pure Typography</a></h3>
+                        <p>Common typographic elements for web apps. Built on Pure.</p>
+                    </li>
+                    <li>
+                        <h3><a href="http://tilomitra.github.io/prettypages/">Prettypages</a></h3>
+                        <p>A pretty Github Pages template. This page uses it.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="content">
+                <h2>Projects I contribute to</h2>
+                <ul class="projects">
+                    <li>
+                        <h3><a href="http://purecss.io">Pure</a></h3>
+                        <p>A set of small, responsive CSS modules that you can use in every web project.</p>
+                    </li>
+                    <li>
+                        <h3><a href="http://yuilibrary.com">YUI 3</a></h3>
+                        <p>An open source JavaScript and CSS library for building richly interactive web applications.</p>
+                    </li>
+                    <li>
+                        <h3><a href="http://yui.github.io/gridbuilder/">Grid Builder</a></h3>
+                        <p>A little web app that generates CSS for customized Pure Grids.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    <h3 class="yui3-u-1 core">The Core</h3>
-    <div class="yui3-u yui3-menu yui3-menu-open yui3-menu-horizontal">
-        <ul class="tk-proxima-nova">
-            <li><a href="http://yui.github.io/gridbuilder/docs.html">Grids</a></li>
-            <li><a href="http://tilomitra.github.io/cssforms/">Forms</a></li>
-            <li><a href="http://tilomitra.github.io/csstables/">Tables</a></li>
-            <li><a href="http://tilomitra.github.io/csslist/">Lists</a></li>
-        </ul>
-    </div>
-
-    <div class="yui3-u text-left">
-        <pre class="yui3-u-1"><code data-language="html">
-    <!-- Combo with CSSNormalize, CSSGrids-Responsive, CSSForm, CSSTable, CSSList (v3.10.0) -->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?3.10.0/build/cssnormalize/cssnormalize-min.css&amp;3.10.0/build/cssgrids-responsive/cssgrids-responsive-min.css&amp;3.10.0/build/cssbutton/cssbutton-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csslist/gallerycss-csslist-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-csstable/gallerycss-csstable-min.css&amp;gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css">
-        </code></pre>
-    </div>
-
-
-    <h3 class="yui3-u-1 addons">Add-ons</h3>
-    <div class="yui3-u yui3-menu yui3-menu-open yui3-menu-horizontal">
-        <ul class="tk-proxima-nova">
-            <li><a href="http://tilomitra.github.io/csstypography/">Typography</a></li>
-            <li><a href="http://tilomitra.github.io/cssextras/">Extras</a></li>
-        </ul>
-    </div>
-
-    <div class="yui3-u text-left">
-        <pre class="yui3-u-1"><code data-language="html">
-    <!-- TYPOGRAPHY http://tilomitra.github.io/csstypography/ -->
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css">
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography.css">
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-responsive.css">
-
-    <!-- EXTRAS http://tilomitra.github.io/cssextras/ -->
-    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/cssextras/master/css/cssextras.css">
-        </code></pre>
-    </div>
-
-    <script src="https://rawgithub.com/ccampbell/rainbow/master/js/rainbow.min.js"></script>
-    <script src="https://rawgithub.com/ccampbell/rainbow/master/js/language/generic.js"></script>
+        <!-- TYPEKIT -->
+        <script type="text/javascript" src="//use.typekit.net/ajf8ggy.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 </html>
