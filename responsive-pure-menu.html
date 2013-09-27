@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/base-min.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/pure-typography.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/cssextras/master/css/pure-extras.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/prettypages/gh-pages/ui.css">
+    <link rel="stylesheet" href="new-menu.css">
+
+    <style>
+            body {
+                font-family: sans-serif;
+                color: #333;
+                margin-bottom: 30px;
+                line-height: 1.6em;
+            }
+
+            .header {
+                margin-bottom: 2em;
+            }
+
+            .content {
+                padding:0 30px;
+            }
+
+            .content h2 {
+                color:#2B474F;
+                margin:50px 0 20px 0;
+                font-weight:bold;
+            }
+
+            #menu-1 {
+                width:120px;
+            }
+
+            #vertical-menu1, #vertical-menu2, #vertical-menu3 {
+                width:40%;
+            }
+
+            #vertical-menu3 {
+                margin: 10px;
+            }
+
+            .pure-menu {
+                margin-bottom:15px;
+            }
+
+            .pure-menu-custom {
+                background: red;
+                border:1px solid black;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+            }
+
+            .pure-menu-custom a {
+                color: white;
+            }
+
+            .pure-menu-custom a:hover {
+                color: orange;
+            }
+            .pure-menu-custom .pure-menu-disabled a,
+            .pure-menu-custom .pure-menu-disabled a:hover
+             {
+                color: yellow;
+            }
+
+            .pure-menu-custom .pure-menu-heading {
+                color: blue;
+            }
+
+            .pure-menu-custom .pure-menu-selected {
+                font-weight: bold;
+            }
+
+        </style>
+</head>
+<body class="pure-type">
+    <div class="header">
+
+        <h1>Responsive Pure Menus</h1>
+        <h2>Make Pure Menus responsive and easier to style.</h2>
+
+    </div>
+
+    <div class="content">
+
+        <div class="pure-alert pure-alert-warning">
+            <label><strong>Be warned</strong></label>
+            <p>The code below is in beta. It hasn't been merged into Pure yet. Also, the best way to check out these examples is just to inspect them using the web console.</p>
+        </div>
+
+
+        <h2>How to use</h2>
+        First, pull in Pure via the <code>link</code> tag. You actually don't want to pull in the Pure Menus module, since you'll be using this instead. So we'll pull in everything <em>except</em> menus using the combo handler. Copy paste this in:
+
+        <pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&amp;pure/0.3.0/grids-min.css&amp;pure/0.3.0/forms-min.css&amp;pure/0.3.0/tables-min.css&quot;&gt;
+        </pre>
+
+        <p>Now, add in the responsive menus CSS. Just copy/paste the CSS from <a href="https://gist.github.com/tilomitra/6722259">this gist</a>.</p>
+        <h2>Responsive Menu</h2>
+        <p>You can now make your menus responsive. Just add the <code>pure-menu-responsive</code> class to your <code>pure-menu</code> element, and add the following element before the <code>&lt;ul&gt;</code>:
+
+        <pre>
+    &lt;a href="#" class="pure-menu-toggle"&gt;Open&lt;/a&gt;
+        </pre>
+
+        <p>You'll also need some JavaScript to toggle styles. Add this in if you're using YUI (write something similar if using something else)</p>
+
+        <pre>
+YUI().use('node', function (Y) {
+    var ACTIVE = 'pure-menu-active';
+
+    //create a single event listener on the body, that listens to
+    //click events on all `.pure-menu-toggle` elements.
+    Y.one('body').delegate('click', function (e) {
+        e.preventDefault();
+
+        //gets the parent. This is the `pure-menu` element.
+        var parent = e.currentTarget.get('parentNode');
+
+        //toggles the `pure-menu-active` class on the parent element
+        parent.toggleClass(ACTIVE);
+
+        //toggles the text within the `pure-menu-toggle` element.
+        if (parent.hasClass(ACTIVE)) {
+            e.currentTarget.set('text', 'Close');
+        }
+        else {
+            e.currentTarget.set('text', 'Open')
+        }
+    }, '.pure-menu-toggle');
+});
+            </pre>
+
+        <h3>Final result</h3>
+
+        <p>Resize your browser to see the responsiveness.</p>
+
+        <div class="pure-menu pure-menu-horizontal pure-menu-2 pure-menu-responsive">
+            <a href="#" class="pure-menu-heading">Site Title</a>
+            <a href="#" class="pure-menu-toggle">Open</a>
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Home</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li class="pure-menu-separator">&nbsp;</li>
+                <li class="pure-menu-disabled"><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+            </ul>
+        </div>
+
+        <h2>Customizing a Menu</h2>
+
+        <p>Customizing a menu is really easy. First, start by adding a class name to your menu. In the example below, we've added the <code>pure-menu-custom</code> class name to the menu.</p>
+
+        <h3>Change menu styles</h3>
+
+        <pre>
+            .pure-menu-custom {
+                background: red;
+                border:1px solid black;
+            }
+        </pre>
+
+        <h3>Change menu links styles</h3>
+
+        <pre>
+            .pure-menu-custom a {
+                color: white;
+            }
+
+            /* hover color for links */
+            .pure-menu-custom a:hover {
+                color: orange;
+            }
+        </pre>
+
+        <h3>Change disabled link styles</h3>
+
+        <pre>
+            .pure-menu-custom .pure-menu-disabled a,
+            .pure-menu-custom .pure-menu-disabled a:hover
+             {
+                color: yellow;
+            }
+        </pre>
+
+        <h3>Change heading styles</h3>
+        <pre>
+            .pure-menu-custom .pure-menu-heading {
+                color: blue;
+                font-size: 150%;
+                font-weight: bold;
+            }
+        </pre>
+
+        <h3>Change selected item styles</h3>
+        <pre>
+            .pure-menu-custom .pure-menu-selected {
+                font-weight: bold;
+            }
+        </pre>
+
+        <h3>Final result</h3>
+
+        <p>Of course, this menu looks ugly, but you get the idea. :) </p>
+
+        <div class="pure-menu pure-menu-horizontal pure-menu-custom pure-menu-responsive">
+            <a href="#" class="pure-menu-heading">Site Title</a>
+            <a href="#" class="pure-menu-toggle">Open</a>
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Home</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li class="pure-menu-separator">&nbsp;</li>
+                <li class="pure-menu-disabled"><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+            </ul>
+        </div>
+
+        <h2>Non-responsive Horizontal Menu</h2>
+
+        <p>
+            This menu is the same as the current Pure Menu. This only difference is that you no longer need to provide the <code>pure-menu-open</code> class name.
+        </p>
+
+        <div class="pure-menu pure-menu-horizontal">
+            <a href="#" class="pure-menu-heading">Site Title</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="pure-menu-selected"><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+                <li class="pure-menu-disabled"><a href="#">Disabled</a></li>
+            </ul>
+        </div>
+
+        <h2>Vertical Menu</h2>
+
+        <p>
+            This menu is the same as the current Pure Menu. This only difference is that you no longer need to provide the <code>pure-menu-open</code> class name.
+        </p>
+
+        <div id="vertical-menu1" class="pure-menu">
+            <a href="#" class="pure-menu-heading">Site Title</a>
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Home</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li class="pure-menu-heading">Yahoo! Sites</li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+                <li class="pure-menu-disabled"><a href="#">Disabled</a></li>
+            </ul>
+        </div>
+
+
+        <h2>Fixed Menus</h2>
+
+        <p>
+            Fixed menus can be created by adding the <code>pure-menu-fixed</code> class name to the wrapper. This will fix a menu to the top of the page. You can see an example of this at the top of this page.
+        </p>
+
+        <div id="fixed-menu" class="pure-menu pure-menu-horizontal pure-menu-fixed">
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+            </ul>
+        </div>
+
+
+
+
+
+        <h2>Paginator</h2>
+
+        <ul class="pure-paginator">
+            <li><a class="pure-button prev" href="#">&#171;</a></li>
+            <li><a class="pure-button" href="#">1</a></li>
+            <li><a class="pure-button pure-button-active" href="#">2</a></li>
+            <li><a class="pure-button" href="#">3</a></li>
+            <li><a class="pure-button" href="#">4</a></li>
+            <li><a class="pure-button" href="#">5</a></li>
+            <li><a class="pure-button next" href="#">&#187;</a></li>
+        </ul>
+
+    </div>
+
+
+    <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+    <script>
+        YUI().use('node', function (Y) {
+            var ACTIVE = 'pure-menu-active';
+
+            //create a single event listener on the body, that listens to
+            //click events on all `.pure-menu-toggle` elements.
+            Y.one('body').delegate('click', function (e) {
+                e.preventDefault();
+
+                //gets the parent. This is the `pure-menu` element.
+                var parent = e.currentTarget.get('parentNode');
+
+                //toggles the `pure-menu-active` class on the parent element
+                parent.toggleClass(ACTIVE);
+
+                //toggles the text within the `pure-menu-toggle` element.
+                if (parent.hasClass(ACTIVE)) {
+                    e.currentTarget.set('text', 'Close');
+                }
+                else {
+                    e.currentTarget.set('text', 'Open')
+                }
+            }, '.pure-menu-toggle');
+        });
+    </script>
+</body>
+</html>
